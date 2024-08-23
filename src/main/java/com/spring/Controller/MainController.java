@@ -1,9 +1,6 @@
 package com.spring.Controller;
 
-import com.spring.Service.AlarmService;
-import com.spring.Service.ClockService;
-import com.spring.Service.PumpService;
-import com.spring.Service.SensorService;
+import com.spring.Service.*;
 
 public class MainController {
 
@@ -16,8 +13,23 @@ public class MainController {
 
     private final ClockService clockService =  new ClockService();
 
-    public void run(){
+    private final DisplayService displayService =  new DisplayService();
 
+    public void run() throws InterruptedException {
+
+        int bloodGlucose = sensorService.obterInformacoesAcucarNoSangue();
+
+        displayService.display("Hora: " + clockService.getCurrentTime());
+        displayService.display("Glicose: " + bloodGlucose +"mg/dL");
+
+        if (this.isTheBloodSugarHigh(bloodGlucose)){
+
+            alarmService.beepToAlert();
+
+            pumpService.injectInsulin(this.calculateMlOfInsulin(bloodGlucose));
+
+            Thread.sleep(3000);
+        }
     }
 
     /**
