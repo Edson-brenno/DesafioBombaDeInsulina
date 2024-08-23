@@ -27,4 +27,10 @@ public class MainController {
     private boolean isTheBloodSugarHigh(int totalSugarOnBlood){
         return totalSugarOnBlood > 126;
     }
+
+    /**
+     * Calculates the total units of insulin needed */
+    private int calculateTotalOfUnitsInsulin(int totalSugarOnBlood){
+        return (totalSugarOnBlood - 100) / 50;
+    }
 }
