@@ -29,8 +29,11 @@ public class MainController {
     }
 
     /**
-     * Calculates the total units of insulin needed */
-    private int calculateTotalOfUnitsInsulin(int totalSugarOnBlood){
-        return (totalSugarOnBlood - 100) / 50;
+     * Calculates the total ml of insulin needed
+     * Calcula o total de ml de insulina*/
+    private float calculateMlOfInsulin(int totalSugarOnBlood){
+        float totalOfInsulinUnit = (float) (totalSugarOnBlood - 100) / 50;
+
+        return (float) totalOfInsulinUnit / 5;
     }
 }
