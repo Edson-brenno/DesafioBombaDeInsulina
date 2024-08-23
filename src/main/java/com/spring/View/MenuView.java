@@ -10,18 +10,11 @@ public class MenuView {
         System.out.println("=========================================================");
     }
 
-    public static void limparTela(){
-        try {
-            String os = System.getProperty("os.name").toLowerCase();
-            String cmd;
-            if (os.contains("win")) {
-                cmd = "cmd /c cls"; // Windows
-            } else {
-                cmd = "clear"; // Unix-like systems
-            }
-            Runtime.getRuntime().exec(cmd);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public static void limparTela() throws IOException, InterruptedException {
+        //Limpa a tela no windows, no linux e no MacOS
+        if (System.getProperty("os.name").contains("Windows"))
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+        else
+            Runtime.getRuntime().exec("clear");
     }
 }
