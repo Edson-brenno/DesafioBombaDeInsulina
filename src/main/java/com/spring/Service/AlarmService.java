@@ -14,5 +14,12 @@ public class AlarmService {
         Toolkit.getDefaultToolkit().beep();
     }
 
-
+    /**
+     * This method it's responsible to reproduce the beep alert
+     * Este metodo é reponsavel por reproduzir beep de alerta*/
+    public void beepToAlert(){
+        for(int c = 0; c < 3; c++){
+            Toolkit.getDefaultToolkit().beep();
+        }
+    }
 }
