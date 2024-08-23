@@ -8,6 +8,6 @@ public class PumpService {
     // Method to inject insulin
     // Metodo para simular injeção de insulina
     public void injectInsulin(float totalOfInsulin){
-        System.out.println("Injetando " + totalOfInsulin + "ml de insulina");
+        System.out.printf("Injetando %.2f ml de insulina \n", totalOfInsulin);
     }
 }
