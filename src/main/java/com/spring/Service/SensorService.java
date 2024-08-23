@@ -10,6 +10,6 @@ public class SensorService {
     // This static method it'll generate random information of the sugar information
     // Este metodo vai gerar nivéis diferentes do nivel de açucar
     public int obterInformacoesAcucarNoSangue(){
-        return new Random().nextInt(80,60);
+        return new Random().nextInt(80,50);
     }
 }

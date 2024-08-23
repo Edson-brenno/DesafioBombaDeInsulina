@@ -20,4 +20,11 @@ public class MainController {
 
     }
 
+    /**
+     * This method checks if the sugar on the blood is high
+     * Este metodo verifica se o acucar no sangue esta alto
+     * @return true (esta alto | is high), false (esta normal | it's normal)*/
+    private boolean isTheBloodSugarHigh(int totalSugarOnBlood){
+        return totalSugarOnBlood > 126;
+    }
 }
