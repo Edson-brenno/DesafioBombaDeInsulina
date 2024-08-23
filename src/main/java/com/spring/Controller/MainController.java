@@ -28,7 +28,6 @@ public class MainController {
 
             pumpService.injectInsulin(this.calculateMlOfInsulin(bloodGlucose));
 
-            Thread.sleep(3000);
         }
     }
 

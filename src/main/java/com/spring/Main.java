@@ -15,9 +15,9 @@ public class Main {
 
             controller.run();
 
-            MenuView.limparTela();
-
             Thread.sleep(2000);
+
+            MenuView.limparTela();
         }
     }
 }
